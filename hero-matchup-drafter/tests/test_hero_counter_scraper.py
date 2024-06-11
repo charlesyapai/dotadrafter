@@ -17,7 +17,7 @@ from unit_test_spider import AxeCountersSpider
 
 @pytest.fixture
 def html_response():
-    # Load HTML content from a file
+    '''Loads HTML content from the file for Axe'''
     with open('data/Axe - Counters - DOTABUFF - Dota 2 Stats.html', 'r', encoding='utf-8') as file:
         html_content = file.read()
     # Create a Scrapy HtmlResponse object
@@ -26,6 +26,10 @@ def html_response():
                         encoding='utf-8')
 
 def test_axe_counters_print(html_response):
+    '''Tests and asserts the unit test to check for the correct css elements being called.
+       Checks that the created keys are correct in the created dictionary called "results", and also
+       asserts that the correct values are parsed from the HTML. 
+    '''
     # Instantiate the spider
     spider = AxeCountersSpider()
     # Parse the response using the spider's parse method
