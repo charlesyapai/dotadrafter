@@ -1,0 +1,5 @@
+{
+    "python.analysis.extraPaths": [
+        "./scraper_hero_scraper/scraper_hero_scraper/spiders"
+    ]
+}
