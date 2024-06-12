@@ -1,7 +1,7 @@
 '''
 This is a test function to do a unit test on the file found in:
 
-scraper_hero_scraper\scraper_hero_scraper\spiders\unit_test_spider.py
+scraper_hero_scraper/scraper_hero_scraper/spiders/unit_test_spider.py
 
 
 To test the scrapy spider function to ensure that it works. 
@@ -12,7 +12,7 @@ import sys
 from scrapy.http import HtmlResponse, Request
 
 
-sys.path.append(r'C:\Users\chaaa\Documents\GitHub\dotadrafter\hero-matchup-drafter\scraper_hero_scraper\scraper_hero_scraper\spiders')
+sys.path.append(r'C:/Users/chaaa/Documents/GitHub/dotadrafter/hero-matchup-drafter/scraper_hero_scraper/scraper_hero_scraper/spiders')
 from unit_test_spider import AxeCountersSpider
 
 @pytest.fixture
