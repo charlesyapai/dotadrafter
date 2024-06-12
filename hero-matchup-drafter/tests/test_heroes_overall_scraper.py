@@ -230,8 +230,11 @@ def test_url_construction(mock_good_yaml):
 def test_output_file_creation(mock_good_yaml, mocker):
     mocker.patch('pandas.DataFrame.to_csv')
     spider = Overall_Hero_List_Spider()
-    spider.df = MagicMock()  # Assuming `df` is a DataFrame instance in your spider
+    spider.df = pd.DataFrame()  # Creating an actual DataFrame
+    mocker.patch.object(spider.df, 'to_csv')  # Mocking the to_csv method of this specific DataFrame
     spider.close_spider(spider)
     today = datetime.datetime.now().strftime('%Y%m%d')
     expected_filename = f'hero_stats_7d_immortal_core_{today}.csv'
-    pd.DataFrame.to_csv.assert_called_once_with(expected_filename, index=False)
+    spider.df.to_csv.assert_called_once_with(expected_filename, index=False)
+    logger.info(f"Test Output File Creation: Passed. CSV file attempt to save as: {expected_filename}")
+
