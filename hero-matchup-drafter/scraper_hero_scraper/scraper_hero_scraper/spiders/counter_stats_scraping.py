@@ -3,7 +3,7 @@ import scrapy
 import yaml
 
 class DotaHeroDataSpider(scrapy.Spider):
-    name = 'dota_hero_data'
+    name = 'hero_counter_stats_spider'
 
     def start_requests(self):
         # Load hero URLs from the YAML file
